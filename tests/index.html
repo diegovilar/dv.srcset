@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="TestApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Tests</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <style type="text/css">
+        </style>
+
+        <script>
+            function now() {
+                var date = new Date();
+
+                return '[' + [date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()].join('-') + '] ';
+            }
+        </script>
+
+        <script src="../libs/angular.js"></script>
+        <script src="../dist/dv-srcset.js"></script>
+        <script src="test.js"></script>
+    </head>
+
+    <body ng-controller="TestController" style="margin: 20px;">
+        <h3>dv.srcset</h3>
+
+        <h4>Directive test</h4>
+        <img dv-srcset="'img/phone@1x.png?1.5x 1.5x, img/phone@2x.png 2x, img/phone@1x.png?3x 3x'" />
+
+    </body>
+</html>
